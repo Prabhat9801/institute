@@ -856,180 +856,112 @@
     <i class="fab fa-whatsapp"></i>
 </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<section id="admission" class="py-5 bg-light">
+    <!-- ... (keep your existing form structure exactly as is) ... -->
+</section>
+
+<!-- Updated Script for Direct Email Submission -->
 <script>
-    // Wait for DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        // ============ Hero Section Background Cycling ============
-        const heroBackgrounds = document.querySelectorAll('.hero-bg');
-        let currentBg = 0;
-        let bgInterval;
-
-        function initBackgroundCycle() {
-            if (heroBackgrounds.length > 0) {
-                // Set initial active background
-                heroBackgrounds[0].classList.add('active');
-                
-                // Start cycling every 5 seconds
-                bgInterval = setInterval(cycleBackgrounds, 5000);
-                
-                // Pause cycling when user hovers over hero section
-                const heroSection = document.querySelector('.hero-section');
-                if (heroSection) {
-                    heroSection.addEventListener('mouseenter', () => clearInterval(bgInterval));
-                    heroSection.addEventListener('mouseleave', () => {
-                        clearInterval(bgInterval);
-                        bgInterval = setInterval(cycleBackgrounds, 5000);
-                    });
-                }
-            }
-        }
-
-        function cycleBackgrounds() {
-            heroBackgrounds.forEach(bg => bg.classList.remove('active'));
-            heroBackgrounds[currentBg].classList.add('active');
-            currentBg = (currentBg + 1) % heroBackgrounds.length;
-        }
-
-        // ============ Form Handling ============
-        function setupForm(formId, successMessage) {
-            const form = document.getElementById(formId);
-            if (!form) return;
-
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Validate required fields
-                const requiredFields = form.querySelectorAll('[required]');
-                let isValid = true;
-                
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        field.classList.add('is-invalid');
-                        isValid = false;
-                    }
-                });
-                
-                if (!isValid) {
-                    alert('Please fill all required fields marked with *');
-                    return;
-                }
-                
-                try {
-                    // Show loading state
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    const originalBtnText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
-                    submitBtn.disabled = true;
-                    
-                    // Submit form data
-                    const formData = new FormData(form);
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData
-                    });
-                    
-                    if (response.ok) {
-                        // Show success message
-                        alert(successMessage);
-                        form.reset();
-                        
-                        // Remove validation errors
-                        requiredFields.forEach(field => field.classList.remove('is-invalid'));
-                        
-                        // Redirect if _next is set
-                        const nextUrl = form.querySelector('[name="_next"]')?.value;
-                        if (nextUrl) {
-                            window.location.href = nextUrl;
-                        }
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Submission failed. Please try again or contact us directly.');
-                } finally {
-                    // Reset button state
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.innerHTML = originalBtnText;
-                        submitBtn.disabled = false;
-                    }
-                }
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    const admissionForm = document.getElementById('admissionForm');
+    
+    if (admissionForm) {
+        admissionForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            // Clear validation errors when user starts typing
-            form.querySelectorAll('input, textarea, select').forEach(element => {
-                element.addEventListener('input', function() {
-                    if (this.hasAttribute('required') && this.value.trim()) {
-                        this.classList.remove('is-invalid');
-                    }
-                });
-            });
-        }
-
-        // Initialize forms
-        setupForm('admissionForm', 'Thank you for your application! We will contact you within 24 hours.');
-        setupForm('contactForm', 'Thank you for your message! Our team will get back to you soon.');
-
-        // ============ Smooth Scrolling ============
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+            // Validate form
+            if (!validateForm(this)) return;
+            
+            // Prepare form data
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            try {
+                // Show loading state
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...';
+                submitBtn.disabled = true;
                 
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
+                // Try FormSubmit first
+                let success = await submitViaFormSubmit(formData);
                 
-                if (targetElement) {
-                    // Close mobile menu if open
-                    const navbarToggler = document.querySelector('.navbar-toggler');
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarToggler && !navbarToggler.classList.contains('collapsed')) {
-                        bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
-                    }
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Adjust for fixed header
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update URL without page jump
-                    if (history.pushState) {
-                        history.pushState(null, null, targetId);
-                    } else {
-                        window.location.hash = targetId;
-                    }
+                if (!success) {
+                    // Fallback to direct email submission
+                    success = await submitViaEmailJS(formData);
                 }
-            });
+                
+                if (success) {
+                    showSuccessMessage();
+                    this.reset();
+                    
+                    // Redirect if _next is set
+                    const nextUrl = this.querySelector('[name="_next"]')?.value;
+                    if (nextUrl) window.location.href = nextUrl;
+                } else {
+                    throw new Error('All submission methods failed');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                // Final fallback - open mail client with pre-filled email
+                openMailClientAsFallback(formData);
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
-
-        // ============ WhatsApp Button Click Tracking ============
-        const whatsappBtn = document.querySelector('.whatsapp-float');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', function() {
-                // You can add analytics tracking here
-                console.log('WhatsApp button clicked');
-            });
-        }
-
-        // Initialize background cycling
-        initBackgroundCycle();
-    });
-
-    // ============ Additional Utility Functions ============
-    // Debounce function for resize/scroll events
-    function debounce(func, wait = 100) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                func.apply(this, args);
-            }, wait);
-        };
     }
+    
+    function validateForm(form) {
+        let isValid = true;
+        form.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('is-invalid');
+                isValid = false;
+            }
+        });
+        if (!isValid) alert('Please fill all required fields marked with *');
+        return isValid;
+    }
+    
+    async function submitViaFormSubmit(formData) {
+        try {
+            const response = await fetch(admissionForm.action, {
+                method: 'POST',
+                body: formData
+            });
+            return response.ok;
+        } catch (error) {
+            console.log('FormSubmit failed, trying fallback...');
+            return false;
+        }
+    }
+    
+    function openMailClientAsFallback(formData) {
+        // Prepare email content
+        let emailBody = "New Admission Form Submission:\n\n";
+        formData.forEach((value, key) => {
+            emailBody += `${key}: ${value}\n`;
+        });
+        
+        // Encode for mailto link
+        const subject = "MPULSE Admission Form Submission";
+        const encodedBody = encodeURIComponent(emailBody);
+        const mailtoLink = `mailto:your-email@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodedBody}`;
+        
+        // Open default mail client
+        window.location.href = mailtoLink;
+        
+        // Show instructions
+        alert("Your form couldn't be submitted automatically. We've opened your email client with the form details. Please click send to complete your submission.");
+    }
+    
+    function showSuccessMessage() {
+        // You can customize this with a modal or nicer alert
+        alert("Thank you! Your application has been submitted successfully. We'll contact you soon.");
+    }
+});
 </script>
-</body>
+
+
 
 </html>
