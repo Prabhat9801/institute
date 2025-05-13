@@ -10,13 +10,10 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #e78038;
+            --secondary-color: #e74c3c;
             --accent-color: #3498db;
             --light-color: #ecf0f1;
             --dark-color: #2c3e50;
-            --header-blue: #266db4;
-            /* New attractive blue color */
-            --custom-orange: #e78038;
         }
 
         body {
@@ -27,7 +24,7 @@
     /* WhatsApp Floating Button */
     .whatsapp-float {
         position: fixed;
-        bottom: 50px;
+        bottom: 60px;
         right: 30px;
         width: 60px;
         height: 60px;
@@ -54,24 +51,6 @@
         margin-top: 2px;
     }
 
-
-        .bg-custom {
-            background-color: var(--custom-orange) !important;
-        }
-
-        .btn-custom {
-            background-color: var(--custom-orange);
-            border-color: var(--custom-orange);
-        }
-
-        .btn-custom:hover {
-            background-color: #d97332;
-            border-color: #d97332;
-        }
-
-        .navbar {
-            background-color: var(--header-blue) !important;
-        }
 
         .hero-section {
             background-size: cover;
@@ -147,8 +126,8 @@
         }
 
         .btn-primary:hover {
-            background-color: #e78038;
-            border-color: #e78038;
+            background-color: #c0392b;
+            border-color: #c0392b;
         }
 
         footer {
@@ -236,12 +215,12 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <div class="d-flex align-items-center">
                     <img src="logo.jpg" alt="MPULSE Logo" height="45" width="45" class="me-2">
-                    <h2 class="mb-0"><span style="color: #e78038;">MPULSE</span> CAREER INSTITUTE</h2>
+                    <h2 class="mb-0"><span style="color: #e74c3c;">MPULSE</span> CAREER INSTITUTE</h2>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -250,17 +229,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#scholarships">Scholarships</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <a href="#admission" class="btn btn-custom ms-3">Apply Now</a>
+                <a href="#admission" class="btn btn-danger ms-3">Apply Now</a>
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Section with Auto-scrolling Backgrounds -->
     <section id="home" class="hero-section">
@@ -276,7 +254,7 @@
             <div class="d-flex justify-content-center gap-3">
                 <a href="#programs" class="btn btn-light btn-lg px-4">Explore Programs</a>
                 <a href="#gallery" class="btn btn-outline-light btn-lg px-4">Gallery</a>
-                <a href="#contact" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+
             </div>
         </div>
     </section>
@@ -386,6 +364,8 @@
         </div>
     </section>
 
+
+
     <!-- Why Choose Us Section -->
     <section id="why-us" class="py-5">
         <div class="container">
@@ -465,7 +445,7 @@
     </section>
 
     <!-- Scholarship Section -->
-    <section id="scholarships" class="py-5 bg-custom text-white">
+    <section id="scholarships" class="py-5 bg-danger text-white">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -488,170 +468,159 @@
         </div>
     </section>
 
+
     <!-- Admission Section -->
-    <section id="admission" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">ADMISSION OPEN (2025-2026)</h2>
-                <p class="lead">Begin your journey to success with us</p>
-            </div>
+<section id="admission" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">ADMISSION OPEN (2025-2026)</h2>
+            <p class="lead">Begin your journey to success with us</p>
+        </div>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="admission-form-container">
-                        <h3 class="text-center mb-4" style="color: var(--secondary-color);">Admission Enquiry Form</h3>
-                        <form id="admissionForm" action="https://formsubmit.co/your-email@mpulse.edu.in" method="POST">
-                            <!-- FormSubmit Configuration -->
-                            <input type="hidden" name="_subject" value="New Admission Form Submission">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-                            <input type="hidden" name="_captcha" value="false">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="admission-form-container">
+                    <h3 class="text-center mb-4" style="color: var(--secondary-color);">Admission Enquiry Form</h3>
+                    <form id="admissionForm" action="https://formsubmit.co/prabhatkumarsictc7070@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Admission Form Submission - MPULSE">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your enquiry to MPULSE Career Institute! We will contact you within 24 hours.">
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="studentName" class="form-label required-field">Student Name</label>
-                                    <input type="text" class="form-control" id="studentName" name="student_name"
-                                        required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="fatherName" class="form-label required-field">Father Name</label>
-                                    <input type="text" class="form-control" id="fatherName" name="father_name" required>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="studentName" class="form-label required-field">Student Name</label>
+                                <input type="text" class="form-control" id="studentName" name="Student Name" required>
                             </div>
-
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="gender" class="form-label required-field">Gender</label>
-                                    <select class="form-select" id="gender" name="gender" required>
-                                        <option value="">Select Gender</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="dob" class="form-label required-field">Date of Birth</label>
-                                    <input type="date" class="form-control" id="dob" name="dob" required>
-                                </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="fatherName" class="form-label required-field">Father's Name</label>
+                                <input type="text" class="form-control" id="fatherName" name="Father's Name" required>
                             </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="parentContact" class="form-label required-field">Parent Contact
-                                        Number</label>
-                                    <input type="tel" class="form-control" id="parentContact" name="parent_contact"
-                                        required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="state" class="form-label required-field">State</label>
-                                    <select class="form-select" id="state" name="state" required>
-                                        <option value="">Select State</option>
-                                        <option value="Karnataka" selected>Karnataka</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="gender" class="form-label required-field">Gender</label>
+                                <select class="form-select" id="gender" name="Gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="dob" class="form-label required-field">Date of Birth</label>
+                                <input type="date" class="form-control" id="dob" name="Date of Birth" required>
+                            </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="city" class="form-label required-field">City</label>
-                                    <input type="text" class="form-control" id="city" name="city" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="address" class="form-label required-field">Residential Address</label>
-                                    <textarea class="form-control" id="address" name="address" rows="1"
-                                        required></textarea>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="parentContact" class="form-label required-field">Parent Contact Number</label>
+                                <input type="tel" class="form-control" id="parentContact" name="Parent Contact" required>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="state" class="form-label required-field">State</label>
+                                <input type="text" class="form-control" id="state" name="State" required>
+                            </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="marks" class="form-label required-field">% of Marks in Previous Studied
-                                        Class</label>
-                                    <input type="number" class="form-control" id="marks" name="marks" step="0.01"
-                                        min="0" max="100" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="neetMarks" class="form-label">NEET Marks (If Applicable)</label>
-                                    <input type="number" class="form-control" id="neetMarks" name="neet_marks">
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="city" class="form-label required-field">City</label>
+                                <input type="text" class="form-control" id="city" name="City" required>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="address" class="form-label required-field">Residential Address</label>
+                                <textarea class="form-control" id="address" name="Address" rows="2" required></textarea>
+                            </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="previousSchool" class="form-label required-field">Previous
-                                        School/College Details</label>
-                                    <textarea class="form-control" id="previousSchool" name="previous_school" rows="1"
-                                        required></textarea>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="board" class="form-label required-field">Board</label>
-                                    <select class="form-select" id="board" name="board" required>
-                                        <option value="">Select Board</option>
-                                        <option value="CBSE">CBSE</option>
-                                        <option value="ICSE">ICSE</option>
-                                        <option value="State Board">State Board</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="marks" class="form-label required-field">% of Marks in Previous Class</label>
+                                <input type="number" class="form-control" id="marks" name="Previous Marks %" step="0.01" min="0" max="100" required>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="neetMarks" class="form-label">NEET Marks (If Applicable)</label>
+                                <input type="number" class="form-control" id="neetMarks" name="NEET Marks">
+                            </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="branch" class="form-label required-field">Branch</label>
-                                    <select class="form-select" id="branch" name="branch" required>
-                                        <option value="">Select Branch</option>
-                                        <option value="Medical">Medical</option>
-                                        <option value="Engineering">Engineering</option>
-                                        <option value="Foundation">Foundation</option>
-                                        <option value="Tuition">Tuition</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="admissionClass" class="form-label required-field">Class of
-                                        Admission</label>
-                                    <select class="form-select" id="admissionClass" name="admission_class" required>
-                                        <option value="">Select Class</option>
-                                        <option value="6th">6th</option>
-                                        <option value="7th">7th</option>
-                                        <option value="8th">8th</option>
-                                        <option value="9th">9th</option>
-                                        <option value="10th">10th</option>
-                                        <option value="11th">11th</option>
-                                        <option value="12th">12th</option>
-                                    </select>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="previousSchool" class="form-label required-field">Previous School/College</label>
+                                <textarea class="form-control" id="previousSchool" name="Previous School" rows="2" required></textarea>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="board" class="form-label required-field">Board</label>
+                                <select class="form-select" id="board" name="Board" required>
+                                    <option value="">Select Board</option>
+                                    <option value="CBSE">CBSE</option>
+                                    <option value="ICSE">ICSE</option>
+                                    <option value="State Board">State Board</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
-                                    <label for="source" class="form-label required-field">Source</label>
-                                    <select class="form-select" id="source" name="source" required>
-                                        <option value="">Select Source</option>
-                                        <option value="Newspaper">Newspaper</option>
-                                        <option value="Social Media">Social Media</option>
-                                        <option value="Friend/Family">Friend/Family</option>
-                                        <option value="Hoarding">Hoarding</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="enquiryDate" class="form-label required-field">Enquiry Date</label>
-                                    <input type="date" class="form-control" id="enquiryDate" name="enquiry_date"
-                                        value="2025-05-13" required>
-                                </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="branch" class="form-label required-field">Branch</label>
+                                <select class="form-select" id="branch" name="Branch" required>
+                                    <option value="">Select Branch</option>
+                                    <option value="Medical">Medical</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Foundation">Foundation</option>
+                                    <option value="Tuition">Tuition</option>
+                                </select>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="admissionClass" class="form-label required-field">Class of Admission</label>
+                                <select class="form-select" id="admissionClass" name="Admission Class" required>
+                                    <option value="">Select Class</option>
+                                    <option value="6th">6th</option>
+                                    <option value="7th">7th</option>
+                                    <option value="8th">8th</option>
+                                    <option value="9th">9th</option>
+                                    <option value="10th">10th</option>
+                                    <option value="11th">11th</option>
+                                    <option value="12th">12th</option>
+                                </select>
+                            </div>
+                        </div>
 
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-custom btn-lg px-5">Submit</button>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="source" class="form-label required-field">How did you hear about us?</label>
+                                <select class="form-select" id="source" name="Source" required>
+                                    <option value="">Select Source</option>
+                                    <option value="Newspaper">Newspaper</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Friend/Family">Friend/Family</option>
+                                    <option value="Hoarding">Hoarding</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="enquiryDate" class="form-label required-field">Enquiry Date</label>
+                                <input type="date" class="form-control" id="enquiryDate" name="Enquiry Date" required>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger btn-lg px-5">Submit Application</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+    <!-- Gallery-->
     <section id="gallery" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
@@ -672,7 +641,7 @@
                     <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                         alt="Lab" class="img-fluid rounded shadow">
                 </div>
-                <div class="col-md-4 mb-4">
+                <!-- <div class="col-md-4 mb-4">
                     <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                         alt="Event" class="img-fluid rounded shadow">
                 </div>
@@ -683,7 +652,7 @@
                 <div class="col-md-4 mb-4">
                     <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                         alt="Award" class="img-fluid rounded shadow">
-                </div>
+                </div> -->
             </div>
 
             <div class="text-center mt-3">
@@ -691,6 +660,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Testimonials Section -->
     <section class="py-5">
@@ -704,49 +674,48 @@
                 <div class="col-md-4 mb-4">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student"
-                                class="rounded-circle me-3" width="60">
+                            <img src="https://images.unsplash.com/photo-1653379671027-bd1be50c4ad1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGluZGlhbiUyMFN0dWRlbnQlMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="Priya Sharma - NEET Topper" class="rounded-circle me-3" width="60" height="60">
                             <div>
                                 <h5 class="mb-0">Priya Sharma</h5>
                                 <p class="text-muted mb-0">NEET Rank 145</p>
                             </div>
                         </div>
-                        <p>"MPULSE's faculty and study material helped me secure a good rank in NEET. The regular tests
-                            and personalized guidance made all the difference."</p>
+                        <p>"MPULSE's NEET coaching transformed my preparation. The faculty's deep subject knowledge and
+                            regular mock tests helped me crack NEET in my first attempt!"</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Student"
-                                class="rounded-circle me-3" width="60">
+                            <img src="https://images.unsplash.com/photo-1665999719798-49a27ca9c97b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Rahul Verma - JEE Advanced" class="rounded-circle me-3" width="60" height="60">
                             <div>
                                 <h5 class="mb-0">Rahul Verma</h5>
-                                <p class="text-muted mb-0">JEE Advanced</p>
+                                <p class="text-muted mb-0">JEE Advanced AIR 78</p>
                             </div>
                         </div>
-                        <p>"The integrated approach of board and competitive exam preparation saved me time and helped
-                            me focus better. The teachers are truly dedicated."</p>
+                        <p>"The problem-solving techniques I learned at MPULSE were game-changers. Their JEE Advanced
+                            crash course helped me secure admission at IIT Bombay."</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student"
-                                class="rounded-circle me-3" width="60">
+                            <img src="https://plus.unsplash.com/premium_photo-1682089897177-4dbc85aa672f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGluZGlhbiUyMFN0dWRlbnQlMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="Ananya Patel - CBSE Topper" class="rounded-circle me-3" width="60" height="60">
                             <div>
                                 <h5 class="mb-0">Ananya Patel</h5>
-                                <p class="text-muted mb-0">CBSE 12th - 95%</p>
+                                <p class="text-muted mb-0">CBSE 12th - 98.4%</p>
                             </div>
                         </div>
-                        <p>"The tuition classes helped me understand concepts clearly and score well in my board exams.
-                            The doubt removal sessions were especially helpful."</p>
+                        <p>"MPULSE's integrated coaching helped me score 100/100 in Physics and Chemistry while
+                            simultaneously preparing for competitive exams."</p>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Contact Section -->
@@ -762,7 +731,7 @@
                     </div>
                     <div class="mb-4">
                         <h5><i class="fas fa-phone me-2"></i> Phone</h5>
-                        <p>+91 9876543210</p>
+                        <p>+91 9164428448 or +91 9964476659</p>
                     </div>
                     <div class="mb-4">
                         <h5><i class="fas fa-envelope me-2"></i> Email</h5>
@@ -805,7 +774,7 @@
                                     <textarea class="form-control" id="contactMessage" name="message" rows="4"
                                         required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-custom">Send Message</button>
+                                <button type="submit" class="btn btn-danger">Send Message</button>
                             </form>
                         </div>
                     </div>
@@ -813,6 +782,14 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Optional: Add form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            // This will show an alert before redirecting to thank-you page
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+    </script>
 
     <!-- Map Section -->
     <div class="map-container">
@@ -832,7 +809,8 @@
                     <div class="social-icons">
                         <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/mpulse_career_institute25/?utm_source=qr&igsh=MXNwZ2kydG1uejJmaQ%3D%3D#"
+                            class="text-white me-3"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -840,9 +818,9 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#home" class="text-white">Home</a></li>
-                        <li><a href="#about" class="text-white">About</a></li>
                         <li><a href="#programs" class="text-white">Programs</a></li>
-                        <li><a href="#gallery" class="text-white">Gallery</a></li>
+                        <li><a href="#why-us" class="text-white">Why Us</a></li>
+                        <li><a href="#scholarships" class="text-white">Scholarships</a></li>
                         <li><a href="#admission" class="text-white">Admission</a></li>
                     </ul>
                 </div>
@@ -859,7 +837,7 @@
                     <h5>Contact Info</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-map-marker-alt me-2"></i> Bengaluru, Karnataka</li>
-                        <li><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li><i class="fas fa-phone me-2"></i> +91 9164428448 or +91 9964476659</li>
                         <li><i class="fas fa-envelope me-2"></i> info@mpulse.edu.in</li>
                     </ul>
                 </div>
@@ -872,55 +850,186 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919801675811?text=Hello%20MPULSE%20Career%20Institute,%20I%20have%20a%20question%20about%20your%20courses." 
+<a href="https://wa.me/919164428448?text=Hello%20MPULSE%20Career%20Institute,%20I%20have%20a%20question%20about%20your%20courses." 
    class="whatsapp-float" 
    target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Hero section background image cycling
+<script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // ============ Hero Section Background Cycling ============
         const heroBackgrounds = document.querySelectorAll('.hero-bg');
         let currentBg = 0;
+        let bgInterval;
+
+        function initBackgroundCycle() {
+            if (heroBackgrounds.length > 0) {
+                // Set initial active background
+                heroBackgrounds[0].classList.add('active');
+                
+                // Start cycling every 5 seconds
+                bgInterval = setInterval(cycleBackgrounds, 5000);
+                
+                // Pause cycling when user hovers over hero section
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.addEventListener('mouseenter', () => clearInterval(bgInterval));
+                    heroSection.addEventListener('mouseleave', () => {
+                        clearInterval(bgInterval);
+                        bgInterval = setInterval(cycleBackgrounds, 5000);
+                    });
+                }
+            }
+        }
 
         function cycleBackgrounds() {
-            // Hide all backgrounds
             heroBackgrounds.forEach(bg => bg.classList.remove('active'));
-
-            // Show current background
             heroBackgrounds[currentBg].classList.add('active');
-
-            // Move to next background
             currentBg = (currentBg + 1) % heroBackgrounds.length;
         }
 
-        // Change background every 5 seconds
-        setInterval(cycleBackgrounds, 5000);
+        // ============ Form Handling ============
+        function setupForm(formId, successMessage) {
+            const form = document.getElementById(formId);
+            if (!form) return;
 
-        // Form submission handling
-        document.getElementById('admissionForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thank you for your application! We will contact you soon.');
-            this.reset();
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                
+                // Validate required fields
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill all required fields marked with *');
+                    return;
+                }
+                
+                try {
+                    // Show loading state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+                    submitBtn.disabled = true;
+                    
+                    // Submit form data
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (response.ok) {
+                        // Show success message
+                        alert(successMessage);
+                        form.reset();
+                        
+                        // Remove validation errors
+                        requiredFields.forEach(field => field.classList.remove('is-invalid'));
+                        
+                        // Redirect if _next is set
+                        const nextUrl = form.querySelector('[name="_next"]')?.value;
+                        if (nextUrl) {
+                            window.location.href = nextUrl;
+                        }
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Submission failed. Please try again or contact us directly.');
+                } finally {
+                    // Reset button state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
+                }
+            });
+            
+            // Clear validation errors when user starts typing
+            form.querySelectorAll('input, textarea, select').forEach(element => {
+                element.addEventListener('input', function() {
+                    if (this.hasAttribute('required') && this.value.trim()) {
+                        this.classList.remove('is-invalid');
+                    }
                 });
             });
+        }
+
+        // Initialize forms
+        setupForm('admissionForm', 'Thank you for your application! We will contact you within 24 hours.');
+        setupForm('contactForm', 'Thank you for your message! Our team will get back to you soon.');
+
+        // ============ Smooth Scrolling ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarToggler && !navbarToggler.classList.contains('collapsed')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                    }
+                    
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        window.location.hash = targetId;
+                    }
+                }
+            });
         });
-    </script>
+
+        // ============ WhatsApp Button Click Tracking ============
+        const whatsappBtn = document.querySelector('.whatsapp-float');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', function() {
+                // You can add analytics tracking here
+                console.log('WhatsApp button clicked');
+            });
+        }
+
+        // Initialize background cycling
+        initBackgroundCycle();
+    });
+
+    // ============ Additional Utility Functions ============
+    // Debounce function for resize/scroll events
+    function debounce(func, wait = 100) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                func.apply(this, args);
+            }, wait);
+        };
+    }
+</script>
 </body>
 
 </html>
